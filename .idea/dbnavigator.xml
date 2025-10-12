@@ -24,7 +24,9 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/deposits" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1c3d8709-9f2b-4a39-9141-f078d3585e78" />
