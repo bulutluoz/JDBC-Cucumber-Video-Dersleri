@@ -7,6 +7,7 @@ import utilities.ReusableMethods;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class LoantechStepdefinitions {
     ResultSet resultSet;
@@ -105,7 +106,30 @@ public class LoantechStepdefinitions {
 
     }
 
+    @When("kullanici {string} tablosunda {string} degeri {string} olan kaydin {string} bilgisini {string} yapar")
+    public void kullanici_tablosunda_degeri_olan_kaydin_bilgisini_yapar(String table, String filtreSutunu, String filtreDegeri, String degisecekBilgi, String degisecekDeger) {
+        // kullanici "users" tablosunda "id" degeri "13" olan kaydin "username" bilgisini "user1313" yapar
+        // "UPDATE users SET username='user1313' WHERE id='13';"
+        String query = "UPDATE " + table + " SET " + degisecekBilgi + "='" + degisecekDeger +
+                       "' WHERE " + filtreSutunu + "='" + filtreDegeri + "';" ;
 
+        ReusableMethods.executeUpdateStatement(query);
+    }
+    @When("{string} tablosunda {string} degeri {string} olan kaydin {string} bilgisinin {string} oldugunu test eder")
+    public void tablosunda_degeri_olan_kaydin_bilgisinin_oldugunu_test_eder(String table, String filtreBilgi, String filtreDeger, String istenenBilgi, String expectedDeger) throws SQLException {
+        //       When kullanici "users" tablosunda "id" degeri "13" olan kaydin "username" bilgisini "user1313" yapar
 
+        // SELECT username FROM users WHERE id = '13';
+        String query = "SELECT " + istenenBilgi + " FROM " + table+
+                        " WHERE " + filtreBilgi + "= '"+ filtreDeger + "';";
+
+        resultSet = ReusableMethods.executeSelectStatement(query);
+
+        resultSet.first();
+        String actualYeniUsername = resultSet.getString("username");
+
+        Assert.assertEquals(actualYeniUsername,expectedDeger);
+
+    }
 
 }

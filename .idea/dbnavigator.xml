@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -17,7 +17,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1c3d8709-9f2b-4a39-9141-f078d3585e78">
-      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT amount FROM deposits;]]></console>
+      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT amount FROM deposits;
+
+SELECT username FROM users WHERE id = '13';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -25,6 +27,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
+      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/users" />
+      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="consoles/Connection" />
       <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/deposits" />
     </open-files>
   </component>
@@ -33,6 +37,7 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.deposits" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.users" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

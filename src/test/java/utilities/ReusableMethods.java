@@ -19,7 +19,7 @@ public class ReusableMethods {
         }
     }
 
-    public static void createSelectStatement(){
+    public static void createStatement(){
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
@@ -28,7 +28,7 @@ public class ReusableMethods {
     }
 
     public static ResultSet executeSelectStatement(String calisacakQuery){
-        createSelectStatement();
+        createStatement();
         try {
             resultSet = statement.executeQuery(calisacakQuery);
         } catch (SQLException e) {
@@ -47,6 +47,21 @@ public class ReusableMethods {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static int executeUpdateStatement(String calisacakQuery){
+        createStatement();
+
+        int etkilenenSatirSayisi=0;
+
+        try {
+            etkilenenSatirSayisi = statement.executeUpdate(calisacakQuery);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return etkilenenSatirSayisi;
+
     }
 
 

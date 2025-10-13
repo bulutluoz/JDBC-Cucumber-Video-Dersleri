@@ -1,6 +1,6 @@
 
   Feature: US1004 Saucedemo username testi
-    @wip
+
     Scenario: TC04 id'si verilen kaydin username bilgisi beklenen deger olmalidir
 
       Given kullanici loantech database'e baglanir
