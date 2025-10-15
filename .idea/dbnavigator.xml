@@ -19,7 +19,9 @@
     <connection id="1c3d8709-9f2b-4a39-9141-f078d3585e78">
       <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT amount FROM deposits;
 
-SELECT username FROM users WHERE id = '13';]]></console>
+SELECT username FROM users WHERE id = '13';
+
+UPDATE categories SET description = 'Basic Loan' WHERE name = 'Basic Loan';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -27,16 +29,17 @@ SELECT username FROM users WHERE id = '13';]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/users" />
-      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="consoles/Connection" />
-      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/deposits" />
+      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/categories" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1c3d8709-9f2b-4a39-9141-f078d3585e78" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.withdrawals" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.categories" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.deposits" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.subscribers" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.users" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
@@ -473,7 +476,7 @@ SELECT username FROM users WHERE id = '13';]]></console>
     <operation-settings>
       <transactions>
         <uncommitted-changes>
-          <on-project-close value="ASK" />
+          <on-project-close value="ROLLBACK" />
           <on-disconnect value="ASK" />
           <on-autocommit-toggle value="ASK" />
         </uncommitted-changes>
