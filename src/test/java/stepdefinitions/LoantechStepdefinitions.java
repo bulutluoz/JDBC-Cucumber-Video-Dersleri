@@ -5,6 +5,7 @@ import manageQueries.LoantechQueries;
 import org.testng.Assert;
 import utilities.ReusableMethods;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -130,4 +131,20 @@ public class LoantechStepdefinitions {
 
     }
 
+    @When("kullanici subscribers tablosunda id degeri {string} ve email bilgisi {string} olan bir kayit ekler")
+    public void kullaniciSubscribersTablosundaIdDegeriVeEmailBilgisiOlanBirKayitEkler(String idDegeri, String emailDegeri) throws SQLException {
+        // INSERT INTO subscribers(id,email) VALUES (40,'merhaba@televole.com');
+
+        String query = LoantechQueries.preStaSubscribersKayitEkleme;
+        //  subscribers(id,email) VALUES (?,?);
+
+        ReusableMethods.createPreparedStatement(query);
+        ReusableMethods.preparedStatement.setString(1,idDegeri);
+        ReusableMethods.preparedStatement.setString(2,emailDegeri);
+
+        // INSERT INTO subscribers(id,email) VALUES ('28','deneme@deneme.com');
+
+        ReusableMethods.preparedStatement.executeUpdate();
+
+    }
 }

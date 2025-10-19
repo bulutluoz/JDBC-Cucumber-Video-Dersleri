@@ -1,6 +1,6 @@
 
   Feature: US1005 users tablosu update testleri
-    @wip
+
     Scenario: TC05 id ile username update islemi yapilabilmeli
 
       Given kullanici loantech database'e baglanir

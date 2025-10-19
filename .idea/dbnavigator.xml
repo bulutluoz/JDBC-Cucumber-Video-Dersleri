@@ -17,11 +17,17 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1c3d8709-9f2b-4a39-9141-f078d3585e78">
-      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[SELECT amount FROM deposits;
+      <console name="Connection" type="STANDARD" schema="u201212290_qaloantec" session="Main"><![CDATA[use u201212290_qaloantec
+
+SELECT amount FROM deposits;
 
 SELECT username FROM users WHERE id = '13';
 
-UPDATE categories SET description = 'Basic Loan' WHERE name = 'Basic Loan';]]></console>
+UPDATE categories SET description = 'Basic Loan' WHERE name = 'entry level';
+
+INSERT INTO subscribers(id,email) VALUES (40,'merhaba@televole.com');
+
+delete from subscribers where id = 29;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -29,7 +35,7 @@ UPDATE categories SET description = 'Basic Loan' WHERE name = 'Basic Loan';]]></
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/categories" />
+      <object connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" object-ref="schemas/u201212290_qaloantec/tables/subscribers" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -41,6 +47,11 @@ UPDATE categories SET description = 'Basic Loan' WHERE name = 'Basic Loan';]]></
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.deposits" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.subscribers" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.users" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.cron_schedules" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.loans" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.cron_jobs" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.languages" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1c3d8709-9f2b-4a39-9141-f078d3585e78" dataset="u201212290_qaloantec.klmno" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

@@ -6,6 +6,7 @@ public class ReusableMethods {
     static Connection connection;
     static Statement statement;
     static ResultSet resultSet;
+    public static PreparedStatement preparedStatement;
 
     public static void getMyConnection(){
         String url = ConfigReader.getProperty("url");
@@ -63,6 +64,16 @@ public class ReusableMethods {
         return etkilenenSatirSayisi;
 
     }
+
+    public static void createPreparedStatement(String query){
+
+        try {
+            preparedStatement = connection.prepareStatement(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 
 }

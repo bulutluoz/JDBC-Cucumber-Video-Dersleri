@@ -10,6 +10,9 @@ public class LoantechQueries {
         return "SELECT * FROM " + tabloAdi;
     }
 
+    public static String preStaSubscribersKayitEkleme = "INSERT INTO subscribers(id,email) VALUES (?,?);";
+
+
     public static String istenenDegeriUpdateSorgusu(String table, String degisecekBilgi,
                                                     String degisecekDeger, String filtreSutunu,
                                                     String filtreDegeri){
@@ -22,4 +25,6 @@ public class LoantechQueries {
         return "SELECT " + istenenBilgi + " FROM " + table+
                 " WHERE " + filtreBilgi + "= '"+ filtreDeger + "';";
     }
+
+
 }
